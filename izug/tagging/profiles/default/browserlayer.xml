@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<layers>
+
+ <layer name="izug_tagging"
+        interface="izug.tagging.browser.interfaces.IIzugTaggingLayer" />
+
+</layers>

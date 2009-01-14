@@ -25,7 +25,8 @@ setup(name='izug.tagging',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          # -*- Extra requirements: -*-
+#          'archetypes.schemaextender',
+#          'Products.AddRemoveWidget',
       ],
       entry_points="""
       # -*- Entry points: -*-
