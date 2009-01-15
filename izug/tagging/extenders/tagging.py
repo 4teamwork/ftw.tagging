@@ -28,7 +28,7 @@ class TaggableExtender(object):
                                       multiValued=True,
                                       languageIndependent=False,
                                       storage=atapi.AttributeStorage(), # This is necessary to make the field indexable
-                                      vocabulary='getAllTags',
+                                      vocabulary_factory=u"Tag Vocabulary",
                                       widget=AddRemoveWidget(label=_(u"label_taggable_extender_tags", default=u"Tags"),
                                                                description=_(u"help_taggable_extender_tags", default=u""),
                                                                ),
