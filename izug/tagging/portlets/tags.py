@@ -57,7 +57,7 @@ class Renderer(base.Renderer):
         
         tag_occurrence = {}
         for tag in tags:
-            query['tags'] = tag
+            query['tags'] = tag.decode('utf-8')
             tag_occurrence[tag] = len(catalog_tool(query))
         
         weight_list = tag_occurrence.values()
@@ -81,7 +81,7 @@ class Renderer(base.Renderer):
                     size = float(self.data.minsize)
                 
                 info = dict(title=tag,
-                            fontsize=round(size, 0.1))
+                            font_size=round(size, 1))
                 tag_cloud.append(info)
             
             tag_cloud.sort(lambda x, y: cmp(x['title'], y['title']))

@@ -1,0 +1,14 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser">
+
+
+    <!-- Resource registrations -->
+    
+    <browser:resourceDirectory
+        name="izug.tagging.stylesheets"
+        directory="stylesheets"
+        layer=".interfaces.IIzugTaggingLayer"
+        />
+
+</configure>

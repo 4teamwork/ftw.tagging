@@ -11,6 +11,7 @@
     <include file="dependencies.zcml" />
     <include file="profiles.zcml" />
 
+    <include package=".browser" />
     <include package=".extenders" />
     <include package=".portlets" />
 
