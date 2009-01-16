@@ -89,7 +89,7 @@ class Renderer(base.Renderer):
         else:
             self.tag_cloud = []
        
-        self.tag_root = tag_root.absolute_url()
+        self.tag_root_url = tag_root.absolute_url()
         
     render = ViewPageTemplateFile('tags.pt')
 

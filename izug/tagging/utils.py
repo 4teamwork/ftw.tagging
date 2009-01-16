@@ -30,7 +30,7 @@ def getTagRootTags(context):
     catalog_tool = getToolByName(context, "portal_catalog")
     tag_root = getInterfaceRoot(context, ITagRoot)
     root_path ='/'.join(tag_root.getPhysicalPath())
-        
+    
     brains_below_tag_root = catalog_tool({'path' : root_path,
                                           'object_provides' : ITaggable.__identifier__})
     for brain in brains_below_tag_root:
@@ -40,3 +40,17 @@ def getTagRootTags(context):
                 items.append(tag)
     
     return items
+
+def getBrainsByTag(context, tag):
+    """Get catalog brains for objects in the current branch of the tag root by tag
+    """
+       
+    catalog_tool = getToolByName(context, "portal_catalog")
+    tag_root = getInterfaceRoot(context, ITagRoot)
+    root_path ='/'.join(tag_root.getPhysicalPath())
+    
+    brains = catalog_tool({'path' : root_path,
+                            'object_provides' : ITaggable.__identifier__,
+                            'tags' : tag.decode('utf-8')})
+    
+    return brains
