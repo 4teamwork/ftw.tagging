@@ -16,10 +16,10 @@ msgstr ""
 
 #: ./izug/tagging/extenders/tagging.py:33
 msgid "help_taggable_extender_tags"
-msgstr ""
+msgstr "Schlagwörter können zur Detaillierung von Beträgen verwendet werden. <br />Sie können bestehende Schlagwörter wählen oder ein neues Schlagwort hinzufügen."
 
 #. Default: "Tags"
 #: ./izug/tagging/extenders/tagging.py:32
 msgid "label_taggable_extender_tags"
-msgstr "Tags"
+msgstr "Schlagwort"
 
