@@ -23,3 +23,7 @@ msgstr "Schlagwörter können zur Detaillierung von Beträgen verwendet werden. 
 msgid "label_taggable_extender_tags"
 msgstr "Schlagwort"
 
+#. Default: "Schlagwörter"
+#: ./izug/tagging/portlets/tags.pt:6
+msgid "label_tagcloud"
+msgstr "Schlagwörter"

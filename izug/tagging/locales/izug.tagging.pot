@@ -25,3 +25,7 @@ msgstr ""
 msgid "label_taggable_extender_tags"
 msgstr ""
 
+#. Default: "Schlagwörter"
+#: ./izug/tagging/portlets/tags.pt:6
+msgid "label_tagcloud"
+msgstr ""
