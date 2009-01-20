@@ -12,6 +12,6 @@ class TagListViewlet(ViewletBase):
 
     def update(self):
         context = aq_inner(self.context).aq_explicit
-        self.tags = context.tags
+        self.tags = getattr(context, 'tags', [])
         self.tag_root_url = getInterfaceRoot(context, ITagRoot).absolute_url()
         
