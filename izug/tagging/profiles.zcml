@@ -4,7 +4,7 @@
 
     <genericsetup:registerProfile
         name="default"
-        title="iZug Tagging"
+        title="izug.tagging"
         directory="profiles/default"
         description="Tagging for iZug."
         provides="Products.GenericSetup.interfaces.EXTENSION"
