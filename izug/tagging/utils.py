@@ -34,7 +34,8 @@ def getTagRootTags(context):
     brains_below_tag_root = catalog_tool({'path' : root_path,
                                           'object_provides' : ITaggable.__identifier__})
     for brain in brains_below_tag_root:
-        for raw_tag in brain.tags:
+        #prevend from dying with getattr
+        for raw_tag in getattr(brain,'tags',[]):
             tag = raw_tag.encode('utf-8')
             if tag not in items:
                 items.append(tag)
