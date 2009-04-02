@@ -12,6 +12,10 @@ from plone.portlets.interfaces import ILocalPortletAssignmentManager
 from plone.app.portlets import portlets
 
 
+from izug.tagging.config import INDEXES, METADATA
+from Products.ZCatalog.Catalog import CatalogError
+
+
 class TaggingGenerator:
     def installProducts(self, portal):
         """QuickInstaller install of required Products"""
@@ -41,4 +45,26 @@ def setupFinal(context):
     site = context.getSite()
     
     gen = TaggingGenerator()
+
+
+
+def add_indexes(site):
+    """Add our indexes to the catalog.
+
+    Doing it here instead of in profiles/default/catalog.xml means we
+    do not need to reindex those indexes after every reinstall.
+    """
+
+    context = site.getSite()
+    catalog = getToolByName(context, 'portal_catalog')
+    indexes = catalog.indexes()
     
+    
+    for name, meta_type in INDEXES:
+        if name not in indexes:
+            catalog.addIndex(name, meta_type)
+        if name in METADATA:
+            try:
+                catalog.manage_addColumn(name)
+            except CatalogError:
+                pass

@@ -16,4 +16,11 @@
     Final setup steps that are not handled by GS import/export
     handlers.
   </import-step>
+  <import-step id="izug.tagging.catalog"
+               version="20080715-01"
+               handler="izug.tagging.setuphandlers.add_indexes"
+               title="iZug Tagging: index import ">
+    Various import steps that are not handled by GS import/export
+    handlers.
+  </import-step>
 </import-steps>
