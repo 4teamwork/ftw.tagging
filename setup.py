@@ -1,11 +1,12 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.1'
+version = '0.1-dev'
+maintainer = 'Mathias Leimgruber'
 
 setup(name='izug.tagging',
       version=version,
-      description="Tagging add-on for iZug",
+      description="Tagging add-on for iZug (Maintainer: %s)" % maintainer,
       long_description=open("README.txt").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
@@ -15,10 +16,10 @@ setup(name='izug.tagging',
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
       keywords='izug tagging plone',
-      author='Christian Schneider, 4teamworkk GmbH',
-      author_email='christian.schneider@4teamwork.ch',
-      url='https://svn.4teamwork.ch/repos/zug/izug.tagging',
-      license='Copyright 2009, 4teamwork GmbH',
+      author='%s, 4teamworkk GmbH' % maintainer,
+      author_email='mailto:info@4teamwork.ch',
+      url='http://psc.4teamwork.ch/4teamwork/kunden/izug/izug.tagging/',
+      license='GPL2',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['izug'],
       include_package_data=True,
