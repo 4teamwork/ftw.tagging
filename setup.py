@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.2-dev'
+version = open('izug/tagging/version.txt').read().strip()
 maintainer = 'Mathias Leimgruber'
 
 setup(name='izug.tagging',
