@@ -1,9 +1,12 @@
 Changelog
 =========
 
-0.2
----
 
+1.0a1
+-----
+
+* Fixed MANIFEST.in
+  [17.06.2010, jbaumann]
 
 
 0.1
