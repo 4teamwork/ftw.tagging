@@ -1,3 +1,0 @@
-recursive-include izug *
-recursive-include doc *
-global-exclude *pyc
