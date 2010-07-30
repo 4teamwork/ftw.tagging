@@ -1,0 +1,62 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2010-07-30 08:39+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: ./ftw/tagging/portlets/tags.py:99
+msgid "Add Tag Cloud Portlet"
+msgstr "Tag Cloud (Schlagwortwolke) Portlet hinzufügen"
+
+#: ./ftw/tagging/portlets/tags.py:110
+msgid "Edit Tag Cloud Portlet"
+msgstr "Tag Cloud (Schlagwortwolke) Portlet bearbeiten"
+
+#: ./ftw/tagging/portlets/tags.py:17
+msgid "Max. Fontsize"
+msgstr "Max. Schriftgrösse"
+
+#: ./ftw/tagging/portlets/tags.py:22
+msgid "Min. Fontsize"
+msgstr "Minimale Schriftgrösse"
+
+#: ./ftw/tagging/portlets/tags.py:18
+msgid "Size in em"
+msgstr "Grösse in em"
+
+#: ./ftw/tagging/portlets/tags.py:100
+msgid "This portlet displays a Tag Cloud                       for Tags within the current Tag Root."
+msgstr "Dieses Portlet zeigt ein Tag Cloud(Schlagwortwolke) für Tags welche in aktuellen Tag Bereich verwendet werden"
+
+#: ./ftw/tagging/portlets/tags.py:111
+msgid "This portlet displays a Tag Cloud                      for Tags within the current Tag Root."
+msgstr "Dieses Portlet zeigt ein Tag Cloud(Schlagwortwolke) für Tags welche in aktuellen Tag Bereich verwendet werden"
+
+#: ./ftw/tagging/extenders/tagging.py:37
+msgid "help_taggable_extender_tags"
+msgstr ""
+
+#. Default: "<span> ${author} </span> at ${created}"
+#: ./ftw/tagging/browser/views/objects_by_tag.pt:57
+msgid "label_blog_byline"
+msgstr "<span> ${author} </span> am ${created}"
+
+#. Default: "Tag Cloud"
+#: ./ftw/tagging/portlets/tags.pt:6
+msgid "label_tagcloud"
+msgstr "Tag Cloud"
+
+#. Default: "Tags"
+#: ./ftw/tagging/extenders/tagging.py:35
+msgid "label_taggable_extender_tags"
+msgstr "Tags"
+
+
