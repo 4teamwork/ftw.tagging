@@ -1,0 +1,29 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser">
+
+    <browser:resourceDirectory
+        name="ftw.tagging.stylesheets"
+        directory="stylesheets"
+        layer=".interfaces.IFtwTaggingLayer"
+        />
+
+    <browser:viewlet
+        name="ftw.tagging.taglist"
+        for="..interfaces.tagging.ITaggable"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
+        class=".viewlets.taglist.TagListViewlet"
+        permission="zope.Public"
+        layer=".interfaces.IFtwTaggingLayer"
+        />
+
+    <!-- View registrations -->
+    <browser:page
+        name="objects_by_tag_view"
+        for="..interfaces.tagging.ITagRoot"
+        class=".views.objects_by_tag.ObjectsByTagView"
+        permission="zope2.View"
+        layer=".interfaces.IFtwTaggingLayer"
+        />
+
+</configure>

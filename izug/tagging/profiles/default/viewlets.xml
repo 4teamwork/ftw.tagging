@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<object>
- <order manager="plone.belowcontenttitle">
-  <viewlet name="izug.tagging.taglist" insert-after="*"/>
- </order>
-</object>

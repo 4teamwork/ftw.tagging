@@ -1,0 +1,32 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="ftw.tagging">
+
+    <five:registerPackage package="." initialize=".initialize" />
+
+    <include package="archetypes.schemaextender" />
+    <include package="Products.AddRemoveWidget" />
+
+    <i18n:registerTranslations directory="locales"/>
+
+    <genericsetup:registerProfile
+        name="default"
+        title="ftw.tagging"
+        directory="profiles/default"
+        description="Tagging for iZug."
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+
+    <include package=".browser" />
+    <include package=".extenders" />
+    <include package=".portlets" />
+
+    <utility 
+        component=".vocabularies.tagVocabulary" 
+        name="Tag Vocabulary" 
+        /> 
+
+</configure>

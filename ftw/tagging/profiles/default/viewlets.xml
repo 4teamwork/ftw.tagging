@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<object>
+ <order manager="plone.belowcontenttitle">
+  <viewlet name="ftw.tagging.taglist" insert-after="*"/>
+ </order>
+</object>

@@ -1,5 +1,5 @@
 # created by: svn propset svn:ignore -F ./IGNORE.TXT .
 
-izug.tagging.egg-info
+ftw.tagging.egg-info
 build
 dist

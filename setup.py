@@ -1,10 +1,10 @@
 from setuptools import setup, find_packages
 import os
 
-version = open('izug/tagging/version.txt').read().strip()
+version = open('ftw/tagging/version.txt').read().strip()
 maintainer = 'Mathias Leimgruber'
 
-setup(name='izug.tagging',
+setup(name='ftw.tagging',
       version=version,
       description="Tagging add-on for iZug (Maintainer: %s)" % maintainer,
       long_description=open("README.txt").read() + "\n" +
@@ -15,19 +15,19 @@ setup(name='izug.tagging',
         "Programming Language :: Python",
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
-      keywords='izug tagging plone',
+      keywords='ftw tagging plone',
       author='%s, 4teamworkk GmbH' % maintainer,
       author_email='mailto:info@4teamwork.ch',
-      url='http://psc.4teamwork.ch/4teamwork/kunden/izug/izug.tagging/',
+      url='http://psc.4teamwork.ch/4teamwork/kunden/ftw/ftw.tagging/',
       license='GPL2',
       packages=find_packages(exclude=['ez_setup']),
-      namespace_packages=['izug'],
+      namespace_packages=['ftw'],
       include_package_data=True,
       zip_safe=False,
       install_requires=[
           'setuptools',
-#          'archetypes.schemaextender',
-#          'Products.AddRemoveWidget',
+          'archetypes.schemaextender',
+          'Products.AddRemoveWidget',
       ],
       entry_points="""
       # -*- Entry points: -*-

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<layers>
+
+ <layer name="ftw_tagging"
+        interface="ftw.tagging.browser.interfaces.IFtwTaggingLayer" />
+
+</layers>

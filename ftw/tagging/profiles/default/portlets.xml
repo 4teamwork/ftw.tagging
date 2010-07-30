@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<portlets>
+ 
+   <portlet 
+    addview="ftw.tagging.portlet.tagcloud"
+    title="Tag Cloud Portlet"
+    description="This portlet displays a Tag Cloud for Tags within the current Tag Root.">
+      <for interface="ftw.tagging.interfaces.ITagRoot" />      
+      <for interface="plone.app.portlets.interfaces.IColumn" />
+      <for interface="plone.app.portlets.interfaces.IDashboard" />
+  </portlet>
+ 
+</portlets>
+

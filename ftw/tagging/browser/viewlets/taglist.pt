@@ -1,0 +1,16 @@
+<div id="taglist"
+     i18n:domain="ftw.tagging">
+
+  <div class="tags">
+    <tal:loop repeat="tag view/tags">
+      <a tal:define="objects_by_tag_url string:${view/tag_root_url}/@@objects_by_tag_view?tag=${tag}"
+         tal:condition="tag"
+         tal:attributes="href objects_by_tag_url"
+         class="tag-item"
+         href="#"
+         tal:content="tag">Tag</a>
+         <span tal:condition="not:repeat/tag/end" tal:replace="string:, " />
+    </tal:loop>
+  </div>
+   
+</div>

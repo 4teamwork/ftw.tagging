@@ -1,0 +1,70 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="ftw.tagging">
+<body>
+
+<metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main"
+           tal:define="kssClassesView context/@@kss_field_decorator_view;
+                       getKssClasses nocall:kssClassesView/getKssClassesInlineEditable;
+                       mtool context/portal_membership;
+                       toLocalizedTime nocall:context/@@plone/toLocalizedTime;
+                       templateId template/getId;">
+
+        <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+        <h1 class="documentFirstHeading"> 
+            <metal:field use-macro="python:context.widget('title', mode='view')">
+                Title
+            </metal:field>
+        </h1>
+
+        <div tal:replace="structure provider:plone.belowcontenttitle" />
+
+        <p class="documentDescription" tal:condition="context/description">
+            <metal:field use-macro="python:context.widget('description', mode='view')">
+                Description
+            </metal:field>
+        </p>
+        
+        <div tal:replace="structure provider:plone.abovecontentbody" />
+
+        <tal:loop tal:repeat="brain view/brains">
+            <h2>
+                <a tal:content="brain/pretty_title_or_id"
+                   tal:attributes="href brain/getURL">Object</a>
+            </h2>
+            <span class="documentByLine">
+                <span i18n:translate="label_blog_byline"
+                      tal:define="item_creator brain/Creator;
+                                  item_created brain/CreationDate;">
+
+                    <tal:name tal:condition="item_creator"
+                        tal:define="author python:mtool.getMemberInfo(item_creator)">
+                      <span>
+                          <span tal:content="python:author and author['fullname'] or item_creator"
+                                tal:omit-tag="not:author"
+                                i18n:name="author">
+                            Bob Dobalina
+                          </span>
+                      </span>
+                     </tal:name>
+                         at
+                     <span class="dateCreated"
+                           tal:content="python:toLocalizedTime(item_created, long_format=1)"
+                           i18n:name="created">from date</span>
+                </span>
+            </span>
+        </tal:loop>
+    
+        <div tal:replace="structure provider:plone.belowcontentbody" />
+
+    </tal:main-macro>
+</metal:main>
+
+</body>
+</html>

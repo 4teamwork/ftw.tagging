@@ -1,0 +1,29 @@
+# ftw.tagging
+# Christian Schneider <christian.schneider@4teamwork.ch>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"POT-Creation-Date: 2009-01-14 14:25+0000\n"
+"PO-Revision-Date: 2009-01-14 15:33+0100\n"
+"Last-Translator: Christian Schneider <christian.schneider@4teamwork.ch>\n"
+"Language-Team: Christian Schneider <christian.schneider@4teamwork.ch>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: ftw.tagging\n"
+
+#: ./izug/tagging/extenders/tagging.py:33
+msgid "help_taggable_extender_tags"
+msgstr "Schlagwörter können zur Detaillierung von Beträgen verwendet werden. <br />Sie können bestehende Schlagwörter wählen oder ein neues Schlagwort hinzufügen."
+
+#. Default: "Tags"
+#: ./izug/tagging/extenders/tagging.py:32
+msgid "label_taggable_extender_tags"
+msgstr "Schlagwort"
+
+#. Default: "Schlagwörter"
+#: ./izug/tagging/portlets/tags.pt:6
+msgid "label_tagcloud"
+msgstr "Schlagwörter"

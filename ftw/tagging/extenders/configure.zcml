@@ -1,0 +1,9 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
+
+    <adapter name="ftw.tagging.taggableextender"
+             factory=".tagging.TaggableExtender"
+             provides="archetypes.schemaextender.interfaces.ISchemaExtender" />
+
+</configure>
