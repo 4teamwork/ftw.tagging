@@ -1,14 +1,4 @@
-from zope.component import getUtility
-from zope.component import getMultiAdapter
-
 from Products.CMFCore.utils import getToolByName
-from Products.CMFEditions.setuphandlers import DEFAULT_POLICIES
-
-from plone.portlets.interfaces import IPortletAssignmentMapping
-from plone.portlets.interfaces import IPortletManager
-from plone.portlets.interfaces import ILocalPortletAssignmentManager
-from plone.app.portlets import portlets
-
 
 from ftw.tagging.config import INDEXES, METADATA
 from Products.ZCatalog.Catalog import CatalogError
@@ -21,7 +11,7 @@ def setupVarious(context):
     if context.readDataFile('ftw.tagging_various.txt') is None:
         return
     site = context.getSite()
-    
+
 
 def setupFinal(context):
     """

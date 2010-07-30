@@ -9,7 +9,7 @@ def tagVocabulary(context):
     """Vocabulary factory for tags within a given section of the site,
     delimited by an ITagRoot interface
     """
-       
+
     return SimpleVocabulary.fromValues(getTagRootTags(context))
 
 alsoProvides(tagVocabulary, IVocabularyFactory)

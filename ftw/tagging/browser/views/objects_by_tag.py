@@ -12,7 +12,7 @@ class ObjectsByTagView(BrowserView):
     def __call__(self):
         context = aq_inner(self.context).aq_explicit
         request = self.request
-        
+
         self.brains = []
         tag = getattr(request, 'tag', None)
         if tag is not None:

@@ -14,4 +14,3 @@ class TagListViewlet(ViewletBase):
         context = aq_inner(self.context).aq_explicit
         self.tags = getattr(context, 'tags', [])
         self.tag_root_url = getInterfaceRoot(context, ITagRoot).absolute_url()
-        
