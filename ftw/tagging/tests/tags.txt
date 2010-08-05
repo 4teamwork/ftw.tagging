@@ -1,0 +1,47 @@
+Do some imports and other configurations
+    >>> from ftw.tagging.interfaces.tagging import ITaggable, ITagRoot
+    >>> from ftw.tagging.extenders.tagging import TaggableExtender
+    >>> from zope.interface import classImplements
+    >>> from zope.component import provideAdapter
+    >>> from ftw.tagging.utils import getTagRootTags
+    >>> self.setRoles(['Contributor'])
+
+Then we create a Folder and add News Items, we used for the test
+    >>> self.portal.invokeFactory('Folder', 'f1')
+    'f1'
+    >>> f1 = self.portal.get('f1')
+    >>> f1.invokeFactory('News Item', 'n1')
+    'n1'
+    >>> n1 = f1.get('n1')
+    >>> f1.invokeFactory('News Item', 'n2')
+    'n2'
+    >>> n2 = f1.get('n2')
+
+And also a News Item, wich was not in the TagRoot folder 'f1'
+    >>> self.portal.invokeFactory('News Item', 'n3')
+    'n3'
+    >>> n3 = self.portal.get('n3')
+
+We set Folders as TagRoot, and all News Items as Taggable Objects 
+
+    >>> classImplements(n1.__class__, ITaggable)
+    >>> classImplements(f1.__class__, ITagRoot)
+
+Now we create a news Item, and check if the tag fields was added to the news Schema.
+    >>> schema = n1.Schema()
+    >>> 'tags' in schema
+    True
+
+Now we set some Tags on our news item
+    >>> n1.Schema().get('tags').set(n1, ['travel', 'spare time'])
+    >>> n1.reindexObject()
+    >>> n2.Schema().get('tags').set(n2, ['spare time', 'city'])
+    >>> n2.reindexObject()
+    >>> n3.Schema().get('tags').set(n3, ['sport'])
+
+And Now we get all tags of the folder and check it
+    >>> tags = getTagRootTags(f1)
+    >>> tags
+    ['travel', 'spare time', 'city']
+    >>> 'sport' in tags
+    False

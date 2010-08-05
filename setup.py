@@ -4,6 +4,10 @@ import os
 version = open('ftw/tagging/version.txt').read().strip()
 maintainer = 'Mathias Leimgruber'
 
+tests_require = [
+    'collective.testcaselayer',
+    ]
+
 setup(name='ftw.tagging',
       version=version,
       description="Tagging add-on for iZug (Maintainer: %s)" % maintainer,
@@ -29,6 +33,9 @@ setup(name='ftw.tagging',
           'archetypes.schemaextender',
           'Products.AddRemoveWidget',
       ],
+      
+      tests_require=tests_require,
+      extras_require=dict(tests=tests_require),
       entry_points="""
       # -*- Entry points: -*-
       """,
