@@ -91,6 +91,17 @@ class Renderer(base.Renderer):
 
         self.tag_root_url = tag_root.absolute_url()
 
+    @property
+    def available(self):
+        """only show the portlet,
+        
+        when already tags are defined in this tagroot"""
+        
+        if len(self.tag_cloud) == 0:
+            return False
+        else:
+            return True
+
     render = ViewPageTemplateFile('tags.pt')
 
 
