@@ -94,9 +94,9 @@ class Renderer(base.Renderer):
     @property
     def available(self):
         """only show the portlet,
-        
+
         when already tags are defined in this tagroot"""
-        
+
         if len(self.tag_cloud) == 0:
             return False
         else:
