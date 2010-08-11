@@ -7,8 +7,6 @@ from archetypes.schemaextender.field import ExtensionField
 from archetypes.schemaextender.interfaces import ISchemaExtender, \
         IBrowserLayerAwareExtender
 
-from Products.AddRemoveWidget import AddRemoveWidget
-
 from ftw.tagging.interfaces.tagging import ITaggable
 from ftw.tagging.browser.interfaces import IFtwTaggingLayer
 from ftw.tagging import taggingMessageFactory as _
@@ -32,7 +30,7 @@ class TaggableExtender(object):
           # This is necessary to make the field indexable
           storage=atapi.AttributeStorage(),
           vocabulary_factory=u"Tag Vocabulary",
-          widget=AddRemoveWidget(label=_(u"label_taggable_extender_tags",
+          widget=atapi.LinesWidget(label=_(u"label_taggable_extender_tags",
                                          default=u"Tags"),
                                  description=_(u"help_taggable_extender_tags",
                                                default=u""),
