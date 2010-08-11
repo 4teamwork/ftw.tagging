@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2010-07-30 08:39+0000\n"
+"POT-Creation-Date: 2010-08-10 06:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,7 +42,7 @@ msgstr "Dieses Portlet zeigt ein Tag Cloud(Schlagwortwolke) für Tags welche in 
 
 #: ./ftw/tagging/extenders/tagging.py:37
 msgid "help_taggable_extender_tags"
-msgstr ""
+msgstr "Tags helfen um die Themen des Blogs zu erfassen"
 
 #. Default: "<span> ${author} </span> at ${created}"
 #: ./ftw/tagging/browser/views/objects_by_tag.pt:57
