@@ -39,5 +39,7 @@ setup(name='ftw.tagging',
       extras_require=dict(tests=tests_require),
       entry_points="""
       # -*- Entry points: -*-
+      [z3c.autoinclude.plugin]
+      target = plone
       """,
       )
