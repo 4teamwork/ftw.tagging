@@ -37,6 +37,7 @@ class TaggableExtender(object):
                                      description=_(u"help_taggable_extender_tags",
                                      default=u""),
                                      vocab_source='special_tag_source',
+                                     roleBasedAdd=False,
                                    ),
           ),
     )
