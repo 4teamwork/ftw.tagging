@@ -2,9 +2,10 @@ Changelog
 =========
 
 
-1.0a4
+1.0b1
 -----
-
+* Fix portlet html structure
+  [09.11.2010, mathias.leimgruber]
 
 1.0a3
 -----
