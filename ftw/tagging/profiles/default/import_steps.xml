@@ -8,19 +8,4 @@
     Various setup steps that are not handled by GS import/export
     handlers.
   </import-step>
-  <import-step id="ftw.tagging.final"
-               version="20090114-01"
-               handler="ftw.tagging.setuphandlers.setupFinal"
-               title="ftw.tagging: Final setup steps">
-    <dependency step="ftw.tagging.various" />
-    Final setup steps that are not handled by GS import/export
-    handlers.
-  </import-step>
-  <import-step id="ftw.tagging.catalog"
-               version="20080715-01"
-               handler="ftw.tagging.setuphandlers.add_indexes"
-               title="iZug Tagging: index import ">
-    Various import steps that are not handled by GS import/export
-    handlers.
-  </import-step>
 </import-steps>
