@@ -30,7 +30,7 @@ def getTagRootTags(context):
     """Get all tags used in the current branch of the tag root
     """
 
-    items = []
+    items = set()
     catalog_tool = getToolByName(context, "portal_catalog")
     tag_root = getInterfaceRoot(context, ITagRoot)
     root_path ='/'.join(tag_root.getPhysicalPath())
@@ -40,13 +40,14 @@ def getTagRootTags(context):
                                 'object_provides': ITaggable.__identifier__})
 
     for brain in brains_below_tag_root:
-        #prevend from dying with getattr
-        for raw_tag in getattr(brain, 'tags', []):
-            tag = raw_tag.encode('utf-8')
-            if tag not in items:
-                items.append(tag)
+        tags = brain.tags
+        if not isinstance(tags, tuple):
+            continue
+        for tag in tags:
+            tag = tag.encode('utf-8')
+            items.add(tag)
 
-    return items
+    return list(items)
 
 
 def getBrainsByTag(context, tag):
