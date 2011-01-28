@@ -1,6 +1,3 @@
-# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
-# SOME DESCRIPTIVE TITLE.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -12,55 +9,54 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
-"Language-Code: en\n"
-"Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: ftw.tagging\n"
+"Domain: DOMAIN\n"
 
 #: ./ftw/tagging/portlets/tags.py:110
 msgid "Add Tag Cloud Portlet"
-msgstr ""
+msgstr "Ajouter portlet nuage de mot-clé (Tag Cloud)"
 
 #: ./ftw/tagging/portlets/tags.py:121
 msgid "Edit Tag Cloud Portlet"
-msgstr ""
+msgstr "Adapter portlet nuage de mot-clé (Tag Cloud)"
 
 #: ./ftw/tagging/portlets/tags.py:17
 msgid "Max. Fontsize"
-msgstr ""
+msgstr "Maximale taille des caractères"
 
 #: ./ftw/tagging/portlets/tags.py:22
 msgid "Min. Fontsize"
-msgstr ""
+msgstr "Minimale taille des caractères"
 
 #: ./ftw/tagging/portlets/tags.py:18
 msgid "Size in em"
-msgstr ""
+msgstr "taille en 'em'"
 
 #: ./ftw/tagging/portlets/tags.py:111
 msgid "This portlet displays a Tag Cloud                       for Tags within the current Tag Root."
-msgstr ""
+msgstr "Ce portlet afficher une nuage de mot-clé pour les mot-clés qui sont utilisées dans la compartiment mot-clés en cours"
 
 #: ./ftw/tagging/portlets/tags.py:122
 msgid "This portlet displays a Tag Cloud                      for Tags within the current Tag Root."
-msgstr ""
+msgstr "Ce portlet afficher une nuage de mot-clé pour les mot-clés qui sont utilisées dans la compartiment mot-clés en cours"
 
 #: ./ftw/tagging/extenders/tagging.py:37
 msgid "help_taggable_extender_tags"
-msgstr ""
+msgstr "Les mot-clé vous aider d'enregistrer le thèmes de blogue'"
 
 #. Default: "<span> ${author} </span> at ${created}"
 #: ./ftw/tagging/browser/views/objects_by_tag.pt:57
 msgid "label_blog_byline"
-msgstr ""
+msgstr "<span> ${author} </span> le ${created}"
 
 #. Default: "Tag Cloud"
 #: ./ftw/tagging/portlets/tags.pt:6
 msgid "label_tagcloud"
-msgstr ""
+msgstr "Nuage de mot-clé"
 
 #. Default: "Tags"
 #: ./ftw/tagging/extenders/tagging.py:35
 msgid "label_taggable_extender_tags"
-msgstr ""
+msgstr "Mot-clé"
+
 

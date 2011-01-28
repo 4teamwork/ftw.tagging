@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2010-08-10 06:35+0000\n"
+"POT-Creation-Date: 2011-01-28 16:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -12,11 +12,11 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ./ftw/tagging/portlets/tags.py:99
+#: ./ftw/tagging/portlets/tags.py:110
 msgid "Add Tag Cloud Portlet"
 msgstr "Tag Cloud (Schlagwortwolke) Portlet hinzufügen"
 
-#: ./ftw/tagging/portlets/tags.py:110
+#: ./ftw/tagging/portlets/tags.py:121
 msgid "Edit Tag Cloud Portlet"
 msgstr "Tag Cloud (Schlagwortwolke) Portlet bearbeiten"
 
@@ -32,11 +32,11 @@ msgstr "Minimale Schriftgrösse"
 msgid "Size in em"
 msgstr "Grösse in em"
 
-#: ./ftw/tagging/portlets/tags.py:100
+#: ./ftw/tagging/portlets/tags.py:111
 msgid "This portlet displays a Tag Cloud                       for Tags within the current Tag Root."
 msgstr "Dieses Portlet zeigt ein Tag Cloud(Schlagwortwolke) für Tags welche in aktuellen Tag Bereich verwendet werden"
 
-#: ./ftw/tagging/portlets/tags.py:111
+#: ./ftw/tagging/portlets/tags.py:122
 msgid "This portlet displays a Tag Cloud                      for Tags within the current Tag Root."
 msgstr "Dieses Portlet zeigt ein Tag Cloud(Schlagwortwolke) für Tags welche in aktuellen Tag Bereich verwendet werden"
 
