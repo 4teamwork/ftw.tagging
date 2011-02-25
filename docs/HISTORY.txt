@@ -1,9 +1,11 @@
 Changelog
 =========
 
+1.0 (unreleased)
+----------------
 
-1.0b2
------
+- Made getTagRootTags() method more robust and more efficient.
+  [buchi]
 
 
 1.0b1
