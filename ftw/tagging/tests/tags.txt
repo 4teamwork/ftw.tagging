@@ -42,6 +42,6 @@ Now we set some Tags on our news item
 And Now we get all tags of the folder and check it
     >>> tags = getTagRootTags(f1)
     >>> tags
-    ['travel', 'spare time', 'city']
+    ['city', 'travel', 'spare time']
     >>> 'sport' in tags
     False
