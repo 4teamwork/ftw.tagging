@@ -16,7 +16,7 @@ Changelog
 
 1.0b1
 -----
-* Fix portlet html structure
+- Fix portlet html structure
   [09.11.2010, mathias.leimgruber]
 
 1.0a3
@@ -26,19 +26,19 @@ Changelog
 1.0a2
 -----
 
-* Fixed MANIFEST.in - again
+- Fixed MANIFEST.in - again
   [18.06.2010, jbaumann]
 
 
 1.0a1
 -----
 
-* Fixed MANIFEST.in
+- Fixed MANIFEST.in
   [17.06.2010, jbaumann]
 
 
 0.1
 ---
 
-* Initial release
+- Initial release
 

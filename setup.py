@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = open('ftw/tagging/version.txt').read().strip()
+version = '1.0.1dev'
 maintainer = 'Mathias Leimgruber'
 
 tests_require = [
@@ -10,20 +10,22 @@ tests_require = [
 
 setup(name='ftw.tagging',
       version=version,
-      description="Tagging add-on for iZug (Maintainer: %s)" % maintainer,
-      long_description=open("README.txt").read() + "\n" +
+      description="Tagging add-on for Plone",
+      long_description=open("README.rst").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
-      # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
+      # Get more strings from
+      # http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
         "Framework :: Plone",
+        "Framework :: Plone :: 4.0",
         "Programming Language :: Python",
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
       keywords='ftw tagging plone',
-      author='%s, 4teamwork GmbH' % maintainer,
+      author='4teamwork GmbH',
       author_email='mailto:info@4teamwork.ch',
       maintainer=maintainer,
-      url='http://psc.4teamwork.ch/4teamwork/kunden/ftw/ftw.tagging/',
+      url='https://github.com/4teamwork/ftw.tagging',
       license='GPL2',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['ftw'],
