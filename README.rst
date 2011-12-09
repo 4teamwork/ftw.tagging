@@ -43,7 +43,7 @@ Links
 - Package repository: https://github.com/4teamwork/ftw.tagging
 - Issue tracker: https://github.com/4teamwork/ftw.tagging/issues
 - Package on pypi: http://pypi.python.org/pypi/ftw.tagging
-- Continous integration: https://jenkins.4teamwork.ch/job/ftw.tagging/
+- Continuous integration: https://jenkins.4teamwork.ch/job/ftw.tagging/
 
 Maintainer
 ==========
