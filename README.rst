@@ -1,13 +1,20 @@
 Overview
 ========
 
-Tagging Add-on for Plone.
+``ftw.tagging`` extends Plone content types with a tags field using
+schemaextender. Further it's possible to define tag roots to restrict
+tags to a part of the site.
+
+A tag cloud portlet is provided that shows a tag cloud for the current
+tag root.
+
+As an example, ``ftw.tagging`` is used by ``ftw.blog`` for tagging blog entries.
 
 
 Install
 =======
 
-- Add ``ftw.tagging`` to yout buildout configuration:
+- Add ``ftw.tagging`` to your buildout configuration:
 
 ::
 
