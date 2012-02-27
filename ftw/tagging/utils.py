@@ -42,7 +42,8 @@ def getTagRootTags(context):
         if not isinstance(tags, tuple):
             continue
         for tag in tags:
-            tag = tag.encode('utf-8')
+            if isinstance(tag, unicode):
+                tag = tag.encode('utf-8')
             items.add(tag)
 
     return list(items)

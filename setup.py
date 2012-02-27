@@ -6,6 +6,8 @@ maintainer = 'Mathias Leimgruber'
 
 tests_require = [
     'collective.testcaselayer',
+    'Products.PloneTestCase',
+    'ftw.testing',
     ]
 
 
