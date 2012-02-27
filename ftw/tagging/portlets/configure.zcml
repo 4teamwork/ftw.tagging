@@ -4,7 +4,7 @@
     xmlns:browser="http://namespaces.zope.org/browser">
 
     <include package="plone.app.portlets" />
-    
+
     <plone:portlet
         name="ftw.tagging.portlet.tagcloud"
         interface=".tags.ITagsPortlet"
@@ -12,6 +12,6 @@
         renderer=".tags.Renderer"
         addview=".tags.AddForm"
         editview=".tags.EditForm"
-        />        
+        />
 
 </configure>

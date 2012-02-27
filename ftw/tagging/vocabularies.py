@@ -1,8 +1,7 @@
+from ftw.tagging.utils import getTagRootTags
 from zope.interface import alsoProvides
 from zope.schema.interfaces import IVocabularyFactory
 from zope.schema.vocabulary import SimpleVocabulary
-
-from ftw.tagging.utils import getTagRootTags
 
 
 def tagVocabulary(context):

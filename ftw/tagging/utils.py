@@ -1,8 +1,6 @@
 from Acquisition import aq_base
-
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone import utils
-
 from ftw.tagging.interfaces.tagging import ITaggable, ITagRoot
 
 

@@ -24,7 +24,7 @@ def add_catalog_indexes(context, logger=None):
     # columns.  We could instead add <depends name="catalog"/> to
     # the registration of our import step in zcml, but doing it in
     # code makes this method usable as upgrade step as well.  Note that
-    # this silently does nothing when there is no catalog.xml, so it                                                                                  
+    # this silently does nothing when there is no catalog.xml, so it
     # is quite safe.
     setup = getToolByName(context, 'portal_setup')
     setup.runImportStepFromProfile(PROFILE_ID, 'catalog')
@@ -53,4 +53,3 @@ def setupVarious(context):
     logger = context.getLogger('ftw.tagging')
     site = context.getSite()
     add_catalog_indexes(site, logger)
-

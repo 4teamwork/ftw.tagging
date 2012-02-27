@@ -1,10 +1,8 @@
 from Acquisition import aq_inner
-
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-from plone.app.layout.viewlets.common import ViewletBase
-
 from ftw.tagging.interfaces.tagging import ITagRoot
 from ftw.tagging.utils import getInterfaceRoot
+from plone.app.layout.viewlets.common import ViewletBase
 
 
 class TagListViewlet(ViewletBase):

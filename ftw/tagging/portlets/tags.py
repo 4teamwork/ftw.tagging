@@ -1,28 +1,26 @@
-from zope.interface import implements
-from plone.portlets.interfaces import IPortletDataProvider
-from plone.app.portlets.portlets import base
 from Products.CMFCore.utils import getToolByName
-
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from ftw.tagging import taggingMessageFactory as _
+from ftw.tagging.interfaces.tagging import ITaggable, ITagRoot
+from ftw.tagging.utils import getInterfaceRoot, getTagRootTags
+from plone.app.portlets.portlets import base
+from plone.portlets.interfaces import IPortletDataProvider
 from zope import schema
 from zope.formlib import form
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-
-from ftw.tagging.utils import getInterfaceRoot, getTagRootTags
-from ftw.tagging.interfaces.tagging import ITaggable, ITagRoot
-from ftw.tagging import taggingMessageFactory as _
+from zope.interface import implements
 
 
 class ITagsPortlet(IPortletDataProvider):
 
     maxsize = schema.ASCIILine(title=_(u'Max. Fontsize'),
-                       description=_(u'Size in em'),
-                       required=True,
-                       default='2')
+                               description=_(u'Size in em'),
+                               required=True,
+                               default='2')
 
     minsize = schema.ASCIILine(title=_(u'Min. Fontsize'),
-                       description=_(u'Size in em'),
-                       required=True,
-                       default='0.7')
+                               description=_(u'Size in em'),
+                               required=True,
+                               default='0.7')
 
 
 class Assignment(base.Assignment):
@@ -73,8 +71,8 @@ class Renderer(base.Renderer):
             for tag in tags:
                 try:
                     size = float((maxsize * \
-                                (tag_occurrence[tag] - minimal))) / \
-                                float((maximal - minimal))
+                                      (tag_occurrence[tag] - minimal))) / \
+                                      float((maximal - minimal))
                 except ZeroDivisionError:
                     size = 1
                 if tag_occurrence[tag] <= minimal or size < minsize:
