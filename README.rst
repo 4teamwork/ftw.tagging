@@ -5,16 +5,16 @@ Tagging Add-on for Plone.
 
 
 Install
-======
+=======
 
-- Add ``ftw.tagging`` to yout buidlout configuration
+- Add ``ftw.tagging`` to yout buildout configuration:
 
 ::
 
   [instance]
-  eggs = 
+  eggs =
     ftw.tagging
-    
+
 - Run buildout
 
 - Install ``ftw.tagging`` in portal_setup
@@ -37,7 +37,8 @@ If no tag root is set, Plone-root will also be your tag-root.
 
 
 You can show the tag-cloud by adding the tag-cloud portlet provided by this
-package. 
+package.
+
 
 Links
 =====
@@ -46,6 +47,7 @@ Links
 - Issue tracker: https://github.com/4teamwork/ftw.tagging/issues
 - Package on pypi: http://pypi.python.org/pypi/ftw.tagging
 - Continuous integration: https://jenkins.4teamwork.ch/job/ftw.tagging/
+
 
 Maintainer
 ==========
