@@ -9,7 +9,8 @@ Install
 
 - Add ``ftw.tagging`` to yout buidlout configuration
 
-:: 
+::
+
   [instance]
   eggs = 
     ftw.tagging
@@ -26,6 +27,7 @@ Implement tagging interfaces for your content types.
 If no tag root is set, Plone-root will also be your tag-root.
 
 ::
+
   <class class="path.to.my.class">
       <implements interface="ftw.tagging.interfaces.tagging.ITaggable" />
   </class>
