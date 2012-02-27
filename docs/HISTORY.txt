@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0.1 (unreleased)
+1.0.1 (2012-02-27)
 ------------------
 
 - Add english translations.
