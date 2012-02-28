@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0.2 (unreleased)
+1.0.2 (2012-02-28)
 ------------------
 
 - Fixed MANIFEST.in: Include README.rst, no longer exclude .mo files.
