@@ -53,10 +53,12 @@ Links
 - Package repository: https://github.com/4teamwork/ftw.tagging
 - Issue tracker: https://github.com/4teamwork/ftw.tagging/issues
 - Package on pypi: http://pypi.python.org/pypi/ftw.tagging
-- Continuous integration: https://jenkins.4teamwork.ch/job/ftw.tagging/
+- Continuous integration: https://jenkins.4teamwork.ch/search?q=ftw.tagging
 
 
-Maintainer
-==========
+Copyright
+=========
 
-This package is produced and maintained by `4teamwork GmbH <http://www.4teamwork.ch/>`_.
+This package is copyright by `4teamwork <http://www.4teamwork.ch/>`_.
+
+``ftw.tagging`` is licensed under GNU General Public License, version 2.
