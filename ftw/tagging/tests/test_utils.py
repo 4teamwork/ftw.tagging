@@ -6,6 +6,7 @@ from ftw.testing import MockTestCase
 class TestUtils(MockTestCase):
 
     def setUp(self):
+        super(TestUtils, self).setUp()
         portal_url = self.stub()
         self.mock_tool(portal_url, 'portal_url')
         self.portal = self.stub()
@@ -34,7 +35,6 @@ class TestUtils(MockTestCase):
         self.replay()
 
         self.assertEqual(utils.getInterfaceRoot(obj, ITagRoot), self.portal)
-
 
     def test_getTagRootTags(self):
         brain1 = self.stub()
