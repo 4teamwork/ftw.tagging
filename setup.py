@@ -25,6 +25,7 @@ setup(name='ftw.tagging',
         'Framework :: Plone :: 4.0',
         'Framework :: Plone :: 4.1',
         'Framework :: Plone :: 4.2',
+        'Framework :: Plone :: 4.3',
         'Programming Language :: Python',
         'Topic :: Software Development :: Libraries :: Python Modules',
         ],
@@ -43,8 +44,28 @@ setup(name='ftw.tagging',
 
       install_requires=[
         'setuptools',
+
+        # Zope
+        'Acquisition',
+        'Zope2',
+        'zope.component',
+        'zope.formlib',
+        'zope.i18nmessageid',
+        'zope.interface',
+        'zope.schema',
+
+        # Plone
         'archetypes.schemaextender',
         'Products.AddRemoveWidget',
+        'Products.Archetypes',
+        'Products.CMFCore',
+        'Products.CMFPlone',
+        'plone.app.layout',
+        'plone.app.portlets',
+        'plone.portlets',
+        'plone.theme',
+
+
         ],
       tests_require=tests_require,
       extras_require=dict(tests=tests_require),
