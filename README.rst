@@ -47,6 +47,12 @@ You can show the tag-cloud by adding the tag-cloud portlet provided by this
 package.
 
 
+Compatibility
+=============
+
+Runs with `Plone <http://www.plone.org/>`_ `4.0`, `4.1`, `4.2` or `4.3`.
+
+
 Links
 =====
 
