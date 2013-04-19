@@ -68,3 +68,7 @@ Copyright
 This package is copyright by `4teamwork <http://www.4teamwork.ch/>`_.
 
 ``ftw.tagging`` is licensed under GNU General Public License, version 2.
+
+.. image:: https://cruel-carlota.pagodabox.com/d8d97e9648bec71dac34777e7b658741
+   :alt: githalytics.com
+   :target: http://githalytics.com/4teamwork/ftw.tagging
