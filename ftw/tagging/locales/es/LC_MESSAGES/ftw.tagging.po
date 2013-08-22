@@ -1,0 +1,60 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2012-02-27 16:27+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: ./ftw/tagging/portlets/tags.py:108
+msgid "Add Tag Cloud Portlet"
+msgstr "Añadir un portlet de nube de etiquetas"
+
+#: ./ftw/tagging/portlets/tags.py:119
+msgid "Edit Tag Cloud Portlet"
+msgstr "Editar el portlet de nube de etiquetas"
+
+#: ./ftw/tagging/portlets/tags.py:15
+msgid "Max. Fontsize"
+msgstr "Tamaño máximo de la fuente usado en la nube de etiquetas"
+
+#: ./ftw/tagging/portlets/tags.py:20
+msgid "Min. Fontsize"
+msgstr "Tamaño mínimo de la fuente usado en la nube de etiquetas"
+
+#: ./ftw/tagging/portlets/tags.py:16
+msgid "Size in em"
+msgstr "Tamaño en 'em'"
+
+#: ./ftw/tagging/portlets/tags.py:109
+msgid "This portlet displays a Tag Cloud                       for Tags within the current Tag Root."
+msgstr "Este portlet muestra la nube de etiquetas correspondiente al contexto actual."
+
+#: ./ftw/tagging/portlets/tags.py:120
+msgid "This portlet displays a Tag Cloud                      for Tags within the current Tag Root."
+msgstr "Este portlet muestra la nube de etiquetas correspondiente al contexto actual."
+
+#: ./ftw/tagging/extenders/tagging.py:39
+msgid "help_taggable_extender_tags"
+msgstr "Las etiquetas ayudan a conocer la temática del blog y a localizar las entradas de cada tema"
+
+#. Default: "<span> ${author} </span> at ${created}"
+#: ./ftw/tagging/browser/views/objects_by_tag.pt:57
+msgid "label_blog_byline"
+msgstr "<span> ${author} </span> el ${created}"
+
+#. Default: "Tag Cloud"
+#: ./ftw/tagging/portlets/tags.pt:6
+msgid "label_tagcloud"
+msgstr "Nube de etiquetas"
+
+#. Default: "Tags"
+#: ./ftw/tagging/extenders/tagging.py:37
+msgid "label_taggable_extender_tags"
+msgstr "Etiquetas"
