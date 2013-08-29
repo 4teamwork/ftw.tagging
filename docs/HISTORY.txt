@@ -5,13 +5,15 @@ Changelog
 1.0.4 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add Spanish translations.
+  [spanish]
 
 
 1.0.3 (2013-04-17)
 ------------------
 
-- Nothing changed yet.
+- Updates in tests, readme and buildout.
+  [jone]
 
 
 1.0.2 (2012-02-28)
