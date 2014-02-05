@@ -22,13 +22,19 @@ class ITagsPortlet(IPortletDataProvider):
                                required=True,
                                default='0.7')
 
+    type_restriction = schema.ASCIILine(title=_(u'Portal Type Restriction'),
+                                          description=_(u'List of allowed portal types for the tag cloud. (Leave empty to allow all types)'),
+                                          required=False,
+                                          default='')
+
 
 class Assignment(base.Assignment):
     implements(ITagsPortlet)
 
-    def __init__(self, maxsize='2', minsize='0.7'):
+    def __init__(self, maxsize='2', minsize='0.7', type_restriction=''):
         self.maxsize = maxsize
         self.minsize = minsize
+        self.type_restriction = type_restriction
 
     @property
     def title(self):
@@ -42,7 +48,7 @@ class Renderer(base.Renderer):
         self.data = data
         self.request = request
 
-        tags = getTagRootTags(context)
+        tags = getTagRootTags(context, self.data.type_restriction)
         tag_root = getInterfaceRoot(context, ITagRoot)
         root_path ='/'.join(tag_root.getPhysicalPath())
 
@@ -111,7 +117,8 @@ class AddForm(base.AddForm):
 
     def create(self, data):
         return Assignment(maxsize=data.get('maxsize', '2'),
-                          minsize=data.get('minsize', '0.7'))
+                          minsize=data.get('minsize', '0.7'),
+                          type_restriction=data.get('type_restriction', ''))
 
 
 class EditForm(base.EditForm):

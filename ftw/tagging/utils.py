@@ -24,7 +24,7 @@ def getInterfaceRoot(context, interface):
         return aq_base(portal)
 
 
-def getTagRootTags(context):
+def getTagRootTags(context, portal_types=None):
     """Get all tags used in the current branch of the tag root
     """
 
@@ -33,9 +33,13 @@ def getTagRootTags(context):
     tag_root = getInterfaceRoot(context, ITagRoot)
     root_path ='/'.join(tag_root.getPhysicalPath())
 
-    brains_below_tag_root = catalog_tool({
-                                'path': root_path,
-                                'object_provides': ITaggable.__identifier__})
+    query = {
+            'path': root_path,
+            'object_provides': ITaggable.__identifier__}
+    if (portal_types):
+        query['portal_type'] = portal_types
+
+    brains_below_tag_root = catalog_tool(query)
 
     for brain in brains_below_tag_root:
         tags = brain.tags
