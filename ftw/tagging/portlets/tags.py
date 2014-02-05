@@ -22,10 +22,10 @@ class ITagsPortlet(IPortletDataProvider):
                                required=True,
                                default='0.7')
 
-    type_restriction = schema.ASCIILine(title=_(u'Portal Type Restriction'),
-                                          description=_(u'List of allowed portal types for the tag cloud. (Leave empty to allow all types)'),
+    type_restriction = schema.Text(title=_(u'Portal Type Restriction'),
+                                          description=_(u'List of allowed portal types for the tag cloud. One type per line. (Leave empty to allow all types)'),
                                           required=False,
-                                          default='')
+                                          default=u'')
 
 
 class Assignment(base.Assignment):
@@ -48,7 +48,9 @@ class Renderer(base.Renderer):
         self.data = data
         self.request = request
 
-        tags = getTagRootTags(context, self.data.type_restriction)
+        portal_types = self.data.type_restriction.split('\n')
+
+        tags = getTagRootTags(context, portal_types)
         tag_root = getInterfaceRoot(context, ITagRoot)
         root_path ='/'.join(tag_root.getPhysicalPath())
 
@@ -56,6 +58,7 @@ class Renderer(base.Renderer):
         query = {}
         query['object_provides'] = ITaggable.__identifier__
         query['path'] = root_path
+        query['portal_type'] = portal_types
 
         tag_occurrence = {}
         for tag in tags:
