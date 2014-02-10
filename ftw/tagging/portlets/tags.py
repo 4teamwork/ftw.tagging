@@ -61,9 +61,13 @@ class Renderer(base.Renderer):
         query['portal_type'] = portal_types
 
         tag_occurrence = {}
-        for tag in tags:
-            query['tags'] = tag.decode('utf-8')
-            tag_occurrence[tag] = len(catalog_tool(query))
+        brains = catalog_tool(query)
+        for brain in brains:
+            for tag in brain.tags:
+                tag = tag.decode('utf-8')
+                if not tag in tag_occurrence:
+                    tag_occurrence[tag] = 0
+                tag_occurrence[tag] += 1
 
         weight_list = tag_occurrence.values()
         weight_list.sort()
