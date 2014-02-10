@@ -72,35 +72,38 @@ class Renderer(base.Renderer):
         weight_list = tag_occurrence.values()
         weight_list.sort()
 
-        if weight_list:
-            minimal = weight_list[:1][0]
-            maximal = weight_list[-1:][0]
-
-            maxsize = float(self.data.maxsize)
-            minsize = float(self.data.minsize)
-
-            tag_cloud = []
-
-            for tag in tags:
-                try:
-                    size = float((maxsize * \
-                                      (tag_occurrence[tag] - minimal))) / \
-                                      float((maximal - minimal))
-                except ZeroDivisionError:
-                    size = 1
-                if tag_occurrence[tag] <= minimal or size < minsize:
-                    size = float(self.data.minsize)
-
-                info = dict(title=tag,
-                            font_size=round(size, 1))
-                tag_cloud.append(info)
-
-            tag_cloud.sort(lambda x, y: cmp(x['title'], y['title']))
-            self.tag_cloud = tag_cloud
-        else:
-            self.tag_cloud = []
+        self.tag_cloud = self.calcTagCloud(tags, tag_occurrence, weight_list)
 
         self.tag_root_url = tag_root.absolute_url()
+
+    def calcTagCloud(self, tags, tag_occurrence, weight_list):
+        if not weight_list:
+            return []
+
+        minimal = weight_list[:1][0]
+        maximal = weight_list[-1:][0]
+
+        maxsize = float(self.data.maxsize)
+        minsize = float(self.data.minsize)
+
+        tag_cloud = []
+
+        for tag in tags:
+            try:
+                size = float((maxsize * \
+                                  (tag_occurrence[tag] - minimal))) / \
+                                  float((maximal - minimal))
+            except ZeroDivisionError:
+                size = 1
+            if tag_occurrence[tag] <= minimal or size < minsize:
+                size = float(self.data.minsize)
+
+            info = dict(title=tag,
+                        font_size=round(size, 1))
+            tag_cloud.append(info)
+
+        tag_cloud.sort(lambda x, y: cmp(x['title'], y['title']))
+        return tag_cloud
 
     @property
     def available(self):
