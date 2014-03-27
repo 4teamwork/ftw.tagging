@@ -47,18 +47,21 @@ class Renderer(base.Renderer):
         self.context = context
         self.data = data
         self.request = request
+        query = {}
 
-        portal_types = self.data.type_restriction.split('\n')
+        if self.data.type_restriction and len(self.data.type_restriction) > 0:
+            portal_types = self.data.type_restriction.split('\n')
+            tags = getTagRootTags(context, portal_types)
+            query['portal_type'] = portal_types
+        else:
+            tags = getTagRootTags(context)
 
-        tags = getTagRootTags(context, portal_types)
         tag_root = getInterfaceRoot(context, ITagRoot)
         root_path ='/'.join(tag_root.getPhysicalPath())
 
         catalog_tool = getToolByName(context, "portal_catalog")
-        query = {}
         query['object_provides'] = ITaggable.__identifier__
         query['path'] = root_path
-        query['portal_type'] = portal_types
 
         tag_occurrence = {}
         brains = catalog_tool(query)
