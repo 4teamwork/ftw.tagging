@@ -22,10 +22,12 @@ class ITagsPortlet(IPortletDataProvider):
                                required=True,
                                default='0.7')
 
-    type_restriction = schema.Text(title=_(u'Portal Type Restriction'),
-                                          description=_(u'List of allowed portal types for the tag cloud. One type per line. (Leave empty to allow all types)'),
-                                          required=False,
-                                          default=u'')
+    type_restriction = schema.Text(
+        title=_(u'Portal Type Restriction'),
+        description=_(u"""List of allowed portal types for the tag cloud.
+            One type per line. (Leave empty to allow all types)"""),
+        required=False,
+        default=u'')
 
 
 class Assignment(base.Assignment):
@@ -57,7 +59,7 @@ class Renderer(base.Renderer):
             tags = getTagRootTags(context)
 
         tag_root = getInterfaceRoot(context, ITagRoot)
-        root_path ='/'.join(tag_root.getPhysicalPath())
+        root_path = '/'.join(tag_root.getPhysicalPath())
 
         catalog_tool = getToolByName(context, "portal_catalog")
         query['object_provides'] = ITaggable.__identifier__
@@ -93,9 +95,8 @@ class Renderer(base.Renderer):
 
         for tag in tags:
             try:
-                size = float((maxsize * \
-                                  (tag_occurrence[tag] - minimal))) / \
-                                  float((maximal - minimal))
+                size = float((maxsize * (tag_occurrence[tag] - minimal))) / \
+                    float((maximal - minimal))
             except ZeroDivisionError:
                 size = 1
             if tag_occurrence[tag] <= minimal or size < minsize:

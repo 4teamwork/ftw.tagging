@@ -31,12 +31,11 @@ def getTagRootTags(context, portal_types=None):
     items = set()
     catalog_tool = getToolByName(context, "portal_catalog")
     tag_root = getInterfaceRoot(context, ITagRoot)
-    root_path ='/'.join(tag_root.getPhysicalPath())
+    root_path = '/'.join(tag_root.getPhysicalPath())
 
-    query = {
-            'path': root_path,
-            'object_provides': ITaggable.__identifier__}
-    if (portal_types):
+    query = {'path': root_path,
+             'object_provides': ITaggable.__identifier__}
+    if portal_types:
         query['portal_type'] = portal_types
 
     brains_below_tag_root = catalog_tool(query)
@@ -60,10 +59,10 @@ def getBrainsByTag(context, tag):
 
     catalog_tool = getToolByName(context, "portal_catalog")
     tag_root = getInterfaceRoot(context, ITagRoot)
-    root_path ='/'.join(tag_root.getPhysicalPath())
+    root_path = '/'.join(tag_root.getPhysicalPath())
 
     brains = catalog_tool({'path': root_path,
-                            'object_provides': ITaggable.__identifier__,
-                            'tags': tag.decode('utf-8')})
+                           'object_provides': ITaggable.__identifier__,
+                           'tags': tag.decode('utf-8')})
 
     return brains
