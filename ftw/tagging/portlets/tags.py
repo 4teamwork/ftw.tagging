@@ -82,7 +82,8 @@ class Renderer(base.Renderer):
                             font_size=round(size, 1))
                 tag_cloud.append(info)
 
-            tag_cloud.sort(lambda x, y: cmp(x['title'], y['title']))
+            tag_cloud.sort(lambda x, y: cmp(x['title'].lower(),
+                                            y['title'].lower()))
             self.tag_cloud = tag_cloud
         else:
             self.tag_cloud = []
