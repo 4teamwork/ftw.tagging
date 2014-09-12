@@ -5,7 +5,8 @@ Changelog
 1.1.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Lowering tags for sorting.
+  [mathias.leimgruber]
 
 
 1.1.0 (2013-08-29)
