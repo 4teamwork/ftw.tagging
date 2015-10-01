@@ -54,6 +54,7 @@ setup(name='ftw.tagging',
         'zope.schema',
 
         # Plone
+        'Plone',
         'archetypes.schemaextender',
         'Products.AddRemoveWidget',
         'Products.Archetypes',
