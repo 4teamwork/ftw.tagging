@@ -3,6 +3,7 @@
   <version>0.1</version>
   <dependencies>
       <dependency>profile-Products.AddRemoveWidget:default</dependency>
+      <dependency>profile-ftw.keywordwidget:default</dependency>
   </dependencies>
   
 </metadata>

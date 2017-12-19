@@ -7,7 +7,10 @@ maintainer = 'Mathias Leimgruber'
 tests_require = [
     'collective.testcaselayer',
     'Products.PloneTestCase',
+    'ftw.builder',
+    'ftw.testbrowser',
     'ftw.testing',
+    'plone.app.contenttypes',
     ]
 
 
@@ -60,11 +63,12 @@ setup(name='ftw.tagging',
         'Products.Archetypes',
         'Products.CMFCore',
         'Products.CMFPlone',
+        'ftw.keywordwidget',
+        'plone.api',
         'plone.app.layout',
         'plone.app.portlets',
         'plone.portlets',
         'plone.theme',
-
 
         ],
       tests_require=tests_require,

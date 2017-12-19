@@ -4,6 +4,7 @@
     xmlns:i18n="http://namespaces.zope.org/i18n"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:cmf="http://namespaces.zope.org/cmf"
+    xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="ftw.tagging">
 
     <five:registerPackage package="." initialize=".initialize" />
@@ -32,6 +33,24 @@
     <utility 
         component=".vocabularies.tagVocabulary" 
         name="tags"
-        /> 
+        />
+
+    <adapter factory=".indexer.tags" name="tags" />
+
+    <plone:behavior
+        title="Tag root"
+        description="Mark an object as tag root"
+        provides="ftw.tagging.interfaces.tagging.ITagRoot"
+        for="plone.dexterity.interfaces.IDexterityContent"
+        />
+
+    <plone:behavior
+        title="Taggable content"
+        description="Makes your content taggable"
+        provides="ftw.tagging.behavior.ITagging"
+        marker="ftw.tagging.interfaces.tagging.ITaggable"
+        factory="plone.behavior.AnnotationStorage"
+        for="plone.dexterity.interfaces.IDexterityContent"
+        />
 
 </configure>
