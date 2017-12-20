@@ -5,10 +5,12 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:cmf="http://namespaces.zope.org/cmf"
     xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:upgrade-step="http://namespaces.zope.org/ftw.upgrade"
     i18n_domain="ftw.tagging">
 
     <five:registerPackage package="." initialize=".initialize" />
 
+    <include package="ftw.upgrade" file="meta.zcml" />
     <include package="archetypes.schemaextender" />
     <include package="Products.AddRemoveWidget" />
 
@@ -51,6 +53,11 @@
         marker="ftw.tagging.interfaces.tagging.ITaggable"
         factory="plone.behavior.AnnotationStorage"
         for="plone.dexterity.interfaces.IDexterityContent"
+        />
+
+    <upgrade-step:directory
+        profile="ftw.tagging:default"
+        directory="./upgrades"
         />
 
 </configure>
