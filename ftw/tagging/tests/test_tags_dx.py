@@ -109,3 +109,41 @@ class TestTagsDexterity(FunctionalTestCase):
             ['Bar'],
             getTagRootTags(document2)
         )
+
+    @browsing
+    def test_objects_by_tag_view(self, browser):
+        utils.add_behaviors('Folder', 'ftw.tagging.interfaces.tagging.ITagRoot')
+        utils.add_behaviors('Document', 'ftw.tagging.behavior.ITagging')
+
+        folder = create(Builder('folder'))
+
+        document1 = create(Builder('document')
+                           .titled(u'Document 1')
+                           .within(folder)
+                           .having(tags=['Foo']))
+
+        document2 = create(Builder('document')
+                           .titled(u'Document 2')
+                           .within(folder)
+                           .having(tags=['Foo', 'Bar']))
+
+        browser.login().visit(document1)
+        browser.click_on('Foo')
+
+        # We're on the "@@objects_by_tag_view" now.
+        self.assertEqual(
+            'http://nohost/plone/folder/@@objects_by_tag_view?tag=Foo',
+            browser.url
+        )
+        # Both documents are listed because the have the same tag "Foo".
+        self.assertEqual(
+            ['Document 1', 'Document 2'],
+            browser.css('#content h2').text
+        )
+
+        # Go to the detail view of the listed objects.
+        browser.click_on('Document 2')
+        self.assertEqual(
+            document2.absolute_url(),
+            browser.url
+        )
