@@ -5,6 +5,12 @@ Changelog
 1.1.2 (unreleased)
 ------------------
 
+- Remove superfluous space after linked tag. [mbaechtold]
+
+- Drop support for Plone 4.2. [mbaechtold]
+
+- Add support for Dexterity. [mbaechtold]
+
 - Drop Plone 4.0 and 4.1 support.
   [jone]
 

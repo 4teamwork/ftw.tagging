@@ -8,8 +8,7 @@
          tal:attributes="href objects_by_tag_url"
          class="tag-item"
          href="#"
-         tal:content="tag">Tag</a>
-         <span tal:condition="not:repeat/tag/end" tal:replace="string:, " />
+         tal:content="tag">Tag</a><span tal:condition="not:repeat/tag/end" tal:replace="string:, " />
     </tal:loop>
   </div>
    

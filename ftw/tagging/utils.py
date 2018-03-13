@@ -1,6 +1,7 @@
 from Acquisition import aq_base
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone import utils
+from ftw.keywordwidget.utils import safe_utf8
 from ftw.tagging.interfaces.tagging import ITaggable, ITagRoot
 
 
@@ -31,7 +32,7 @@ def getTagRootTags(context):
     items = set()
     catalog_tool = getToolByName(context, "portal_catalog")
     tag_root = getInterfaceRoot(context, ITagRoot)
-    root_path ='/'.join(tag_root.getPhysicalPath())
+    root_path = '/'.join(tag_root.getPhysicalPath())
 
     brains_below_tag_root = catalog_tool({
                                 'path': root_path,
@@ -39,12 +40,10 @@ def getTagRootTags(context):
 
     for brain in brains_below_tag_root:
         tags = brain.tags
-        if not isinstance(tags, tuple):
+        if not isinstance(tags, (tuple, list)):
             continue
         for tag in tags:
-            if isinstance(tag, unicode):
-                tag = tag.encode('utf-8')
-            items.add(tag)
+            items.add(safe_utf8(tag))
 
     return list(items)
 
@@ -60,6 +59,6 @@ def getBrainsByTag(context, tag):
 
     brains = catalog_tool({'path': root_path,
                             'object_provides': ITaggable.__identifier__,
-                            'tags': tag.decode('utf-8')})
+                            'tags': safe_utf8(tag)})
 
     return brains

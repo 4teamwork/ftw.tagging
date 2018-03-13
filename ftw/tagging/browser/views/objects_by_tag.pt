@@ -17,20 +17,12 @@
 
         <div tal:replace="structure provider:plone.abovecontenttitle" />
 
-        <h1 class="documentFirstHeading"> 
-            <metal:field use-macro="python:context.widget('title', mode='view')">
-                Title
-            </metal:field>
-        </h1>
+        <h1 class="documentFirstHeading" tal:content="here/Title" />
 
         <div tal:replace="structure provider:plone.belowcontenttitle" />
 
-        <p class="documentDescription" tal:condition="context/description">
-            <metal:field use-macro="python:context.widget('description', mode='view')">
-                Description
-            </metal:field>
-        </p>
-        
+        <p class="documentDescription" tal:condition="context/description" tal:content="context/description" />
+
         <div tal:replace="structure provider:plone.abovecontentbody" />
 
         <tal:loop tal:repeat="brain view/brains">

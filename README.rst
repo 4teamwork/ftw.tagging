@@ -2,8 +2,10 @@ Overview
 ========
 
 ``ftw.tagging`` extends Plone content types with a tags field using
-schemaextender. Further it's possible to define tag roots to restrict
-tags to a part of the site.
+schemaextender for Archetype or a behavior for Dexterity.
+
+It's possible to define tag roots to restrict tags to a part of the
+site. If no tag root is set, the Plone-root will also be your tag-root.
 
 A tag cloud portlet is provided that shows a tag cloud for the current
 tag root.
@@ -30,18 +32,42 @@ Install
 Usage
 =====
 
-Implement tagging interfaces for your content types.
-If no tag root is set, Plone-root will also be your tag-root.
+Enable tagging on your AT types:
 
 ::
 
   <class class="path.to.my.class">
-      <implements interface="ftw.tagging.interfaces.tagging.ITaggable" />
-  </class>
-  <class class=".blog.Blog">
-      <implements interface="ftw.tagging.interfaces.tagging.ITagRoot" />
+    <implements interface="ftw.tagging.interfaces.tagging.ITaggable" />
   </class>
 
+Enable tagging on your DX types with a behavior:
+
+::
+
+  <property name="behaviors" purge="False">
+    <element value="ftw.tagging.behavior.ITagging" />
+  </property>
+
+
+Optionally define tag roots (AT or DX):
+
+::
+
+  <class class="path.to.my.class">
+    <implements interface="ftw.tagging.interfaces.tagging.ITagRoot" />
+  </class>
+
+For DX, you could alternatively use a behavior to define tag roots:
+
+::
+
+  <property name="behaviors" purge="False">
+    <element value="ftw.tagging.interfaces.tagging.ITagRoot" />
+  </property>
+
+
+Tag Cloud
+---------
 
 You can show the tag-cloud by adding the tag-cloud portlet provided by this
 package.
@@ -50,7 +76,7 @@ package.
 Compatibility
 =============
 
-Runs with `Plone <http://www.plone.org/>`_ `4.2` or `4.3`.
+Runs with `Plone <http://www.plone.org/>`_ `4.3`.
 
 
 Links
