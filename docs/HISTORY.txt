@@ -5,6 +5,8 @@ Changelog
 1.1.2 (unreleased)
 ------------------
 
+- Convert index values to UTF8 byte strings. [mbaechtold]
+
 - Remove superfluous space after linked tag. [mbaechtold]
 
 - Drop support for Plone 4.2. [mbaechtold]
