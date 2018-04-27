@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from ftw.builder import Builder
 from ftw.builder import create
 from ftw.builder.content import register_dx_content_builders
@@ -22,18 +23,21 @@ class TestTagsDexterity(FunctionalTestCase):
 
         document = create(Builder('document')
                           .titled(u'My Document')
-                          .having(tags=['Foo', u'B\xe4\xe4']))
+                          .having(tags=['Foo', u'Bär']))
 
         catalog = api.portal.get_tool('portal_catalog')
         rid = catalog.getrid('/'.join(document.getPhysicalPath()))
         index_data = catalog.getIndexDataForRID(rid)
+
+        # We expect UTF8 byte strings form the catalog index.
         self.assertEqual(
-            {'Foo', u'B\xe4\xe4'},
+            {'Foo', 'B\xc3\xa4r'},
             set(index_data['tags'])
         )
 
+        # We expect UTF8 byte strings form the catalog index.
         self.assertEqual(
-            {'Foo', 'B\xc3\xa4\xc3\xa4'},
+            {'Foo', 'B\xc3\xa4r'},
             set(getTagRootTags(document))
         )
 
@@ -46,18 +50,19 @@ class TestTagsDexterity(FunctionalTestCase):
 
         browser.login().visit(document, view='edit')
 
-        browser.fill({'form.widgets.ITagging.tags_new': u'Foo\nB\xe4\xe4'}).save()
+        # Set two tags "Foo" and "Bär" on the document.
+        browser.fill({'form.widgets.ITagging.tags_new': u'Foo\nBär'}).save()
 
         catalog = api.portal.get_tool('portal_catalog')
         rid = catalog.getrid('/'.join(document.getPhysicalPath()))
         index_data = catalog.getIndexDataForRID(rid)
 
         self.assertEqual(
-            {'B\xc3\xa4\xc3\xa4', 'Foo'},
+            {'B\xc3\xa4r', 'Foo'},
             set(index_data['tags'])
         )
         self.assertEqual(
-            {'B\xc3\xa4\xc3\xa4', 'Foo'},
+            {'B\xc3\xa4r', 'Foo'},
             set(getTagRootTags(document))
         )
 
