@@ -4,6 +4,7 @@ from ftw.tagging import taggingMessageFactory as _
 from ftw.tagging.interfaces.tagging import ITaggable, ITagRoot
 from ftw.tagging.utils import getInterfaceRoot, getTagRootTags
 from plone.app.portlets.portlets import base
+from plone.dexterity.utils import safe_utf8
 from plone.portlets.interfaces import IPortletDataProvider
 from zope import schema
 from zope.formlib import form
@@ -53,7 +54,7 @@ class Renderer(base.Renderer):
 
         tag_occurrence = {}
         for tag in tags:
-            query['tags'] = tag.decode('utf-8')
+            query['tags'] = safe_utf8(tag)
             tag_occurrence[tag] = len(catalog_tool(query))
 
         weight_list = tag_occurrence.values()

@@ -152,3 +152,19 @@ class TestTagsDexterity(FunctionalTestCase):
             document2.absolute_url(),
             browser.url
         )
+
+    @browsing
+    def test_tag_cloud_portlet(self, browser):
+        utils.add_behaviors('Document', 'ftw.tagging.behavior.ITagging')
+
+        create(Builder('document')
+               .titled(u'My Document')
+               .having(tags=['Foo', u'Bär']))
+
+        create(Builder('tag cloud portlet'))
+
+        browser.login().open()
+        self.assertEqual(
+            [u'B\xe4r', 'Foo'],
+            browser.css('.portletTagcloud .portletItem a').text
+        )
