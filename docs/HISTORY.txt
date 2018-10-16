@@ -5,6 +5,8 @@ Changelog
 1.1.2 (unreleased)
 ------------------
 
+- Fix DecodeUnicodeError in the tag cloud portlet. [mbaechtold]
+
 - Convert index values to UTF8 byte strings. [mbaechtold]
 
 - Remove superfluous space after linked tag. [mbaechtold]
