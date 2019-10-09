@@ -6,7 +6,6 @@ maintainer = 'Mathias Leimgruber'
 
 tests_require = [
     'collective.testcaselayer',
-    'Products.PloneTestCase',
     'ftw.builder',
     'ftw.testbrowser',
     'ftw.testing',
@@ -26,6 +25,7 @@ setup(name='ftw.tagging',
       classifiers=[
         'Framework :: Plone',
         'Framework :: Plone :: 4.3',
+        'Framework :: Plone :: 5.1',
         'Programming Language :: Python',
         'Topic :: Software Development :: Libraries :: Python Modules',
         ],
@@ -56,9 +56,6 @@ setup(name='ftw.tagging',
 
         # Plone
         'Plone',
-        'archetypes.schemaextender',
-        'Products.AddRemoveWidget',
-        'Products.Archetypes',
         'Products.CMFCore',
         'Products.CMFPlone',
         'ftw.keywordwidget',

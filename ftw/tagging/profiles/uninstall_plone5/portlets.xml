@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<!-- https://stackoverflow.com/questions/5897656/disabling-portlet-types-site-wide-in-plone -->
+<portlets>
+    <portlet addview="ftw.tagging.portlet.tagcloud" remove="True" />
+</portlets>

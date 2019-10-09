@@ -6,17 +6,17 @@
     xmlns:cmf="http://namespaces.zope.org/cmf"
     xmlns:plone="http://namespaces.plone.org/plone"
     xmlns:upgrade-step="http://namespaces.zope.org/ftw.upgrade"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
     i18n_domain="ftw.tagging">
 
     <five:registerPackage package="." initialize=".initialize" />
 
     <include package="ftw.upgrade" file="meta.zcml" />
-    <include package="archetypes.schemaextender" />
-    <include package="Products.AddRemoveWidget" />
 
     <i18n:registerTranslations directory="locales"/>
 
     <genericsetup:registerProfile
+        zcml:condition="not-have plone-5"
         name="default"
         title="ftw.tagging"
         directory="profiles/default"
@@ -24,16 +24,33 @@
         provides="Products.GenericSetup.interfaces.EXTENSION"
         />
 
+    <genericsetup:registerProfile
+        zcml:condition="have plone-5"
+        name="default"
+        title="ftw.tagging"
+        directory="profiles/default_plone5"
+        description="Tagging for Plone."
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+
+    <genericsetup:registerProfile
+        zcml:condition="have plone-5"
+        name="uninstall"
+        title="Uninstall ftw.tagging"
+        directory="profiles/uninstall_plone5"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        for="Products.CMFPlone.interfaces.IMigratingPloneSiteRoot"
+        />
+
     <cmf:registerDirectory
        name="ftw_tagging"/>
 
 
     <include package=".browser" />
-    <include package=".extenders" />
     <include package=".portlets" />
 
-    <utility 
-        component=".vocabularies.tagVocabulary" 
+    <utility
+        component=".vocabularies.tagVocabulary"
         name="tags"
         />
 

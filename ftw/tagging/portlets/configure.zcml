@@ -1,7 +1,8 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:plone="http://namespaces.plone.org/plone"
-    xmlns:browser="http://namespaces.zope.org/browser">
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:zcml="http://namespaces.zope.org/zcml">
 
     <include package="plone.app.portlets" />
 
@@ -12,6 +13,20 @@
         renderer=".tags.Renderer"
         addview=".tags.AddForm"
         editview=".tags.EditForm"
+        />
+
+    <plone:portletRenderer
+        zcml:condition="have plone-5"
+        portlet="ftw.tagging.portlets.tags.ITagsPortlet"
+        layer="ftw.tagging.browser.interfaces.IFtwTaggingLayer"
+        template="tags_plone5.pt"
+        />
+
+    <plone:portletRenderer
+        zcml:condition="not-have plone-5"
+        portlet="ftw.tagging.portlets.tags.ITagsPortlet"
+        layer="ftw.tagging.browser.interfaces.IFtwTaggingLayer"
+        template="tags.pt"
         />
 
 </configure>

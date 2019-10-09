@@ -32,14 +32,6 @@ Install
 Usage
 =====
 
-Enable tagging on your AT types:
-
-::
-
-  <class class="path.to.my.class">
-    <implements interface="ftw.tagging.interfaces.tagging.ITaggable" />
-  </class>
-
 Enable tagging on your DX types with a behavior:
 
 ::
@@ -49,15 +41,7 @@ Enable tagging on your DX types with a behavior:
   </property>
 
 
-Optionally define tag roots (AT or DX):
-
-::
-
-  <class class="path.to.my.class">
-    <implements interface="ftw.tagging.interfaces.tagging.ITagRoot" />
-  </class>
-
-For DX, you could alternatively use a behavior to define tag roots:
+Optionally use a behavior to define tag roots:
 
 ::
 
@@ -76,7 +60,7 @@ package.
 Compatibility
 =============
 
-Runs with `Plone <http://www.plone.org/>`_ `4.3`.
+Runs with `Plone <http://www.plone.org/>`_ `4.3` and `5.1`.
 
 
 Links
