@@ -5,6 +5,7 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:cmf="http://namespaces.zope.org/cmf"
     xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:profilehook="http://namespaces.zope.org/profilehook"
     xmlns:upgrade-step="http://namespaces.zope.org/ftw.upgrade"
     xmlns:zcml="http://namespaces.zope.org/zcml"
     i18n_domain="ftw.tagging">
@@ -12,6 +13,7 @@
     <five:registerPackage package="." initialize=".initialize" />
 
     <include package="ftw.upgrade" file="meta.zcml" />
+    <include package="ftw.profilehook" />
 
     <i18n:registerTranslations directory="locales"/>
 
@@ -40,6 +42,16 @@
         directory="profiles/uninstall_plone5"
         provides="Products.GenericSetup.interfaces.EXTENSION"
         for="Products.CMFPlone.interfaces.IMigratingPloneSiteRoot"
+        />
+
+    <profilehook:hook
+        profile="ftw.tagging:default"
+        handler=".setuphandlers.installed"
+        />
+
+    <profilehook:hook
+        profile="ftw.tagging:uninstall"
+        handler=".setuphandlers.uninstalled"
         />
 
     <cmf:registerDirectory

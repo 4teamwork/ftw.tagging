@@ -6,6 +6,14 @@ from ftw.tagging.config import INDEXES
 PROFILE_ID = 'profile-ftw.tagging:default'
 
 
+def installed(site):
+    add_catalog_indexes(site)
+
+
+def uninstalled(site):
+    remove_catalog_indexes(site)
+
+
 def add_catalog_indexes(context, logger=None):
     """Method to add our wanted indexes to the portal_catalog.
 
@@ -43,13 +51,10 @@ def add_catalog_indexes(context, logger=None):
         catalog.manage_reindexIndex(ids=indexables)
 
 
-def setupVarious(context):
-    """
-    Setup various settings.
-    """
-    if context.readDataFile('ftw.tagging_various.txt') is None:
-        return
+def remove_catalog_indexes(context):
+    catalog = getToolByName(context, 'portal_catalog')
+    indexes = catalog.indexes()
 
-    logger = context.getLogger('ftw.tagging')
-    site = context.getSite()
-    add_catalog_indexes(site, logger)
+    for name, meta_type in INDEXES:
+        if name in indexes:
+            catalog.delIndex(name)
