@@ -8,6 +8,7 @@ from ftw.tagging.utils import getTagRootTags
 from ftw.testbrowser import browsing
 from plone import api
 from plone.app.testing import applyProfile
+from ftw.testing import IS_PLONE_5
 
 
 class TestTagsDexterity(FunctionalTestCase):
@@ -164,7 +165,12 @@ class TestTagsDexterity(FunctionalTestCase):
         create(Builder('tag cloud portlet'))
 
         browser.login().open()
+        if IS_PLONE_5:
+            css_selector = '.portletTagcloud .portletContent a'
+        else:
+            css_selector = '.portletTagcloud .portletItem a'
+
         self.assertEqual(
             [u'B\xe4r', 'Foo'],
-            browser.css('.portletTagcloud .portletItem a').text
+            browser.css(css_selector).text
         )

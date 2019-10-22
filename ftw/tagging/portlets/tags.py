@@ -7,8 +7,15 @@ from plone.app.portlets.portlets import base
 from plone.dexterity.utils import safe_utf8
 from plone.portlets.interfaces import IPortletDataProvider
 from zope import schema
-from zope.formlib import form
 from zope.interface import implements
+from z3c.form import field
+
+
+try:
+    from plone.app.portlets.browser import z3cformhelper
+except ImportError:
+    # plone 5
+    from plone.app.portlets.browser import formhelper as z3cformhelper
 
 
 class ITagsPortlet(IPortletDataProvider):
@@ -105,8 +112,9 @@ class Renderer(base.Renderer):
     render = ViewPageTemplateFile('tags.pt')
 
 
-class AddForm(base.AddForm):
-    form_fields = form.Fields(ITagsPortlet)
+class AddForm(z3cformhelper.AddForm):
+    schema = ITagsPortlet
+    fields = field.Fields(ITagsPortlet)
     label = _(u"Add Tag Cloud Portlet")
     description = _(u"This portlet displays a Tag Cloud \
                       for Tags within the current Tag Root.")
@@ -116,8 +124,9 @@ class AddForm(base.AddForm):
                           minsize=data.get('minsize', '0.7'))
 
 
-class EditForm(base.EditForm):
-    form_fields = form.Fields(ITagsPortlet)
+class EditForm(z3cformhelper.EditForm):
+    schema = ITagsPortlet
+    fields = field.Fields(ITagsPortlet)
     label = _(u"Edit Tag Cloud Portlet")
     description = _(u"This portlet displays a Tag Cloud\
                       for Tags within the current Tag Root.")

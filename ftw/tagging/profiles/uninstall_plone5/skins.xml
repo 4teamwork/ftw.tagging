@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<object name="portal_skins">
+
+    <object name="ftw.tagging"
+            remove="True" />
+
+    <skin-path name="*">
+        <layer name="ftw.tagging" remove="True" />
+    </skin-path>
+
+</object>
