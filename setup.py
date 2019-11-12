@@ -8,7 +8,7 @@ tests_require = [
     'collective.testcaselayer',
     'ftw.builder',
     'ftw.testbrowser',
-    'ftw.testing',
+    'ftw.testing<2a',
     'plone.app.contenttypes',
     ]
 
