@@ -5,7 +5,6 @@
     <browser:resourceDirectory
         name="ftw.tagging.stylesheets"
         directory="stylesheets"
-        layer=".interfaces.IFtwTaggingLayer"
         />
 
     <browser:viewlet

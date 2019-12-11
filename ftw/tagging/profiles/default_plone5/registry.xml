@@ -1,21 +1,15 @@
 <?xml version="1.0"?>
 <registry>
 
-    <records prefix="plone.resources/tagging_css" interface='Products.CMFPlone.interfaces.IResourceRegistry'>
-        <value key="css">
-            <element>++resource++ftw.tagging.stylesheets/tagcloud.css</element>
-        </value>
-    </records>
-
-    <records prefix="plone.bundles/ftw-tagging-resources" interface='Products.CMFPlone.interfaces.IBundleRegistry'>
-        <value key="resources">
-            <element>tagging_css</element>
-        </value>
+    <records prefix="plone.bundles/ftw-tagging-resources"
+             interface='Products.CMFPlone.interfaces.IBundleRegistry'>
         <value key="enabled">True</value>
-        <value key="depends">plone-legacy</value>
+        <value key="depends">plone</value>
+        <value key="stub_js_modules">jquery</value>
         <value key="compile">False</value>
-        <value key="csscompilation">++plone++tagging/ftw-tagging-compiled.css</value>
+        <value key="csscompilation">++resource++ftw.tagging.stylesheets/tagging-compiled.css</value>
+        <value key="last_compilation">2019-12-09 15:25:00</value>
         <value key="merge_with">default</value>
-    </records>
+      </records>
 
 </registry>
