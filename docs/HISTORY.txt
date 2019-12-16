@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-2.0.1 (unreleased)
+2.0.1 (2019-12-16)
 ------------------
 
 - Add plone 5 bundle (CSS). [tinagerber]
