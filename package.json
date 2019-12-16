@@ -1,0 +1,17 @@
+{
+  "name": "ftw.tagging",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:4teamwork/ftw.tagging.git",
+  "author": "4teamwork AG <info@4teamwork.ch>",
+  "license": "GPL2",
+  "scripts": {
+    "build": "r.js -o buildcss.js",
+    "build-css": "r.js -o buildcss.js",
+    "watch": "chokidar \"./ftw/tagging/browser/stylesheets/*.css\" -i \"**/*-compiled.css\" -c \"r.js -o buildcss.js\""
+  },
+  "devDependencies": {
+    "chokidar-cli": "^2.1.0",
+    "requirejs": "^2.3.6"
+  }
+}
